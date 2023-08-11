@@ -8,19 +8,30 @@ class Edit
         $codigo = '';
 
         if(!is_null($nome)){
+            
             $registro = file("edita.txt");
-            $quanti = count($registro);
-            $codigo = $quanti +1;
-
-
-
+            
+            // Localizar o ultimo item do array
+            $quanti = end($registro);
+            var_dump($quanti);
+            // Separar os espaços vazios do array para retirar do registro o código do item  
+            $at = explode("  ", $quanti);
+            //O registro onde se encontra o codigo adiciona -se mais um para informar que esse será o proximo item do array
+            $codigo = $at[0]+1;
+            // Formatação do item a ser incluido no txt 
             $inclui = substr($codigo . "  " . $nome . str_repeat(' ' , 80),0,78) .",\n"; 
+            
+            //  Localizar o array key onde vai ser incluido o item novo
             $arquivo = file("edita.txt");
             $ultimo = end($arquivo);
             $ultimachave = key($arquivo);
             $ultimachave += 1;
+
+            // Colocar o array key e seu valor no array   
             $arquivo[$ultimachave] = $inclui;
             var_dump($arquivo);
+
+            // Finalmente editar o txt 
             file_put_contents("edita.txt", $arquivo);
 
             header('Location:index.php');
@@ -31,15 +42,29 @@ class Edit
     public function editar($codigo, $nome, $novoNome){
         
         $arquiv = file("edita.txt");
+            //localizar um termo especifico em um array
+        $pesq = array_search(substr($codigo . "  " . $nome . str_repeat(' ' , 80),0,78) .",\n", $arquiv);
+        echo $pesq;
+        
+        $count = count($arquiv);
+
+        
+        if($pesq == 0 && $count == 0){
+            echo 'Nome não encontrado';
+        } else {
             
-            $ar = $codigo-1;
-            $arquiv[$ar] = substr($codigo . "  " . $novoNome . str_repeat(' ' , 80),0,78) .",\n";
+            echo $arquiv[$pesq];
+            $arquiv[$pesq] =  substr($codigo . "  " . $novoNome . str_repeat(' ' , 80),0,78) .",\n";
+            
             file_put_contents("edita.txt", $arquiv);
             header('Location:index.php');
-       
+        }
+            
+              
     }
 
     public function listar(){
+
         $arquivo = file('edita.txt');    
         //var_dump($arquivo);
 
@@ -50,6 +75,7 @@ class Edit
             $codigo =  $num[0];
             //echo $codigo;
             $nome = $num[1];
+
             //echo $nome;  
             if(!empty($codigo)){
                 echo '<tr>';
@@ -63,8 +89,7 @@ class Edit
 		        Excluir</a></td>";
 
 		        echo '</tr>';
-            }
-
+            } 
         }
     } 
 
@@ -73,11 +98,14 @@ class Edit
         $arquiv = file("edita.txt");
         print_r($arquiv);
         $pesq = array_search(substr($codigo . "  " . $nome . str_repeat(' ' , 80),0,78) .",\n", $arquiv);
-        var_dump($pesq);
+        var_dump($arquiv);
         // linha onde se encontra o termo da pesquisa no array. 
         echo $pesq;
+        //verificar se é o ultimo item do array
+        $count = count($arquiv);
+        var_dump($count);
 
-        if($pesq == 0){
+        if($pesq == 0 && $count == 0){
             echo 'Nome não encontrado';
         } else {
             
