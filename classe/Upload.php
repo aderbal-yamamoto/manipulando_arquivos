@@ -35,6 +35,11 @@ class Upload{
 	readfile($file);
         
     }
+
+    public function apagarPdf($file){
+        
+        $arq = unlink($file);
+    }
 }
 
 ?>

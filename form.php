@@ -36,20 +36,15 @@ if(isset($_FILES)){
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<title>Inclusão de Alunos</title>
 </head>
 <body>
 	<form method="post" action="" enctype="multipart/form-data">
 		Nome <input type="text" name="nome" value="<?=$nome?>" autofocus = "autofocus">
 		    <input type="hidden" name="codigo" value="">
-			
-		
-			<input type="submit" value="gravar">
-
-    </form>
-
-	<form action="" method="post" enctype="multipart/form-data">
-      Selecione o arquivo: <input type="file" name="arquivo" />
+	    Selecione o arquivo: <input type="file" name="arquivo" />
       <input type="submit" value="Enviar"/>
       
     </form>

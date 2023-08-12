@@ -71,7 +71,11 @@ class Edit
             
               
     }
-
+    /*   
+            Criar classe para está função e assim reduzir seu acoplamento, 
+       pois está classe utiliza metodos tanto da classe edit como da classe Upload 
+       está pode ser uma classe control. 
+   */
     public function listar(){
 
         $arquivo = file('edita.txt');    
@@ -89,15 +93,15 @@ class Edit
             if(!empty($codigo)){
                 echo '<tr>';
 
-		        echo "<td> <a href=\"form.php?codigo={$codigo}&nome={$nome}\">
+		        echo "<td> <a href=\"form.php?codigo={$codigo}&nome={$nome}\" >
 		        {$codigo}</a></td>";
 		
 		        echo "<td>{$nome}</td>"; 
 		
-		        echo "<td><a href=\"apagar.php?codigo={$codigo}&nome={$nome}\">
-		        Excluir</a></td>";
+		        echo "<td><a href=\"apagar.php?codigo={$codigo}&nome={$nome}\"  class=\"btn btn-danger ml-3 mr-5\" >
+		        Excluir</a></td>";  
 
-                echo "<td><a href=\"exibirPdf.php?nome={$nome}\">
+                echo "<td><a href=\"exibirPdf.php?nome={$nome}\" class=\"btn btn-success\">
 		        PDF</a></td>";
 
 		        echo '</tr>';
