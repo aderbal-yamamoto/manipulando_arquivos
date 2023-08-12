@@ -43,9 +43,15 @@ if(isset($_FILES)){
 		Nome <input type="text" name="nome" value="<?=$nome?>" autofocus = "autofocus">
 		    <input type="hidden" name="codigo" value="">
 			
-		Selecione o arquivo: <input type="file" name="arquivo" />	
+		
 			<input type="submit" value="gravar">
 
+    </form>
+
+	<form action="" method="post" enctype="multipart/form-data">
+      Selecione o arquivo: <input type="file" name="arquivo" />
+      <input type="submit" value="Enviar"/>
+      
     </form>
 </body>
 </html>

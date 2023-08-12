@@ -29,12 +29,20 @@ Envio de arquivos via php para servidor
 
 class Upload{
 
-    
+    public $dir = "imagens/"; 
     
     
     public function uploadFiles($file){
+       
+      $arq =  move_uploaded_file($file["tmp_name"], "$this->dir".$file["name"]);
+      
+      if ($arq == true ) {
+        echo "arquivo enviado com sucesso";
+      }
+      else{
+        echo "erro ao enviar o arquivo";
+      }
 
-       move_uploaded_file($file["tmp_name"], "imagens/".$file["name"]); 
 
     }
 }
