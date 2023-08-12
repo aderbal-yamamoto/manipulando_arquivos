@@ -17,7 +17,16 @@ class Edit
             // Separar os espaços vazios do array para retirar do registro o código do item  
             $at = explode("  ", $quanti);
             //O registro onde se encontra o codigo adiciona -se mais um para informar que esse será o proximo item do array
+            //Erro que aparece no 1 item a ser incluido
+            if($at[0]==''){
+             
+                $at[0] = 0;
+
+            } 
+
             $codigo = $at[0]+1;
+
+            
             // Formatação do item a ser incluido no txt 
             $inclui = substr($codigo . "  " . $nome . str_repeat(' ' , 80),0,78) .",\n"; 
             

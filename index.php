@@ -15,6 +15,7 @@
     <body>
         <h1>Cadastro </h1>
         <a href="form.php">Incluir</a>
+        <a href="formArq.php">Anexar</a>
         <table>
             <thead>
                 <tr>
