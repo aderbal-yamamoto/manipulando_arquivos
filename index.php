@@ -14,20 +14,23 @@
     </head>
     <body>
         <h1>Cadastro </h1>
-        <a href="form.php">Incluir</a>
-        <a href="formArq.php">Anexar</a>
+        <p> <a href="form.php">Incluir</a>
+        <a href="formArq.php">Anexar</a> </p>
         <table>
             <thead>
                 <tr>
                     <th>Codigo</th>
                     <th>Nome</th>
                     <th>Ação</th>
+                    <th>visualizar</th>
                 </tr>
             </thead>
             <tbody>
         <?php $edit->listar(); ?>			
             </tbody>
         </table>
+
+
     </body>
     </html>
     

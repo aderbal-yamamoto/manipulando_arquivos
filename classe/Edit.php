@@ -97,6 +97,9 @@ class Edit
 		        echo "<td><a href=\"apagar.php?codigo={$codigo}&nome={$nome}\">
 		        Excluir</a></td>";
 
+                echo "<td><a href=\"exibirPdf.php?nome={$nome}\">
+		        PDF</a></td>";
+
 		        echo '</tr>';
             } 
         }

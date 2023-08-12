@@ -11,9 +11,6 @@ if(isset($_FILES)){
     $arq->uploadFiles($file);
     }
 }
-
-
-
 ?>
 
 
