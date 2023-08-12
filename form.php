@@ -1,5 +1,7 @@
 <?php 
 require_once "classe/Edit.php";
+require_once "classe/Upload.php";
+
 $nome = isset($_POST['nome']) ? $_POST['nome'] : NULL;
 
 //verificar se tem codigo e nome vai alterar 
@@ -18,6 +20,15 @@ if(isset($_GET['codigo'])&& isset($_GET['nome'])){
 	$cadastrar = new Edit();
 	$cadastrar->gravar($nome);
 }
+if(isset($_FILES)){
+    
+    $fil = isset($_FILES["arquivo"]) ? $_FILES : NULL;
+    if(!is_null($fil)){
+    $file = $fil['arquivo'];
+    $arq = new Upload();
+    $arq->uploadFiles($file);
+    }
+}
 ?>
 
 
@@ -28,9 +39,11 @@ if(isset($_GET['codigo'])&& isset($_GET['nome'])){
 	<title>Inclusão de Alunos</title>
 </head>
 <body>
-	<form method="post" action="">
+	<form method="post" action="" enctype="multipart/form-data">
 		Nome <input type="text" name="nome" value="<?=$nome?>" autofocus = "autofocus">
 		    <input type="hidden" name="codigo" value="">
+			
+		Selecione o arquivo: <input type="file" name="arquivo" />	
 			<input type="submit" value="gravar">
 
     </form>
