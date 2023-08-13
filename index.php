@@ -14,10 +14,38 @@
             Cadastro
         </title>
     </head>
-    <body class ="ml-5">
+    <body class ="ml-2 mr-2">
+                
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(Página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form.php">Incluir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formArq.php">Anexar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="listarArquivos.php">Listar Arquivos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <h1 class="mt-3 ml-5"> Cadastro </h1>
-        <p> <a href="form.php" class="btn btn-outline-primary ml-5 mt-3">Incluir</a>
-        <a href="formArq.php" class="btn btn-outline-secondary ml-4  mt-3">Anexar</a> </p>
+
+
+
+
         <table>
             <thead>
                 <tr class="table">

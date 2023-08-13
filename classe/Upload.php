@@ -8,15 +8,19 @@ class Upload{
     
     public function uploadFiles($file){
 
-       
-       
+             
       $arq =  move_uploaded_file($file["tmp_name"], "$this->dir".$file["name"]);
       
       if ($arq == true ) {
-        echo "arquivo enviado com sucesso";
+        
+         echo "<div class=\"alert alert-primary\" role=\"alert\">
+                  Arquivo enviado com sucesso
+               </div>";
       }
       else{
-        echo "erro ao enviar o arquivo";
+        echo "<div class=\"alert alert-danger\" role=\"alert\">
+                      Erro ao enviar o arquivo!
+              </div>";
       }
 
 
@@ -28,11 +32,11 @@ class Upload{
         $filename = $arq[1];
         
 	
-	header('Content-type: application/pdf');
-	header('Content-Disposition: inline; filename="' .$filename. '"');
-	header('Content-Transfer-Encoding; binary');
-	header('Accept-Ranges; bytes');
-	readfile($file);
+	      header('Content-type: application/pdf');
+	      header('Content-Disposition: inline; filename="' .$filename. '"');
+	      header('Content-Transfer-Encoding; binary');
+	      header('Accept-Ranges; bytes');
+	      readfile($file);
         
     }
 
