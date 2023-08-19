@@ -38,7 +38,7 @@ class Edit
 
             // Colocar o array key e seu valor no array   
             $arquivo[$ultimachave] = $inclui;
-            var_dump($arquivo);
+            //var_dump($arquivo);
 
             // Finalmente editar o txt 
             file_put_contents("edita.txt", $arquivo);
