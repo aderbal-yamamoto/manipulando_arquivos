@@ -20,7 +20,7 @@ class Upload{
       else{
         echo "<div class=\"alert alert-danger\" role=\"alert\">
                       Erro ao enviar o arquivo!
-              </div>";
+              </div>"; 
       }
 
 

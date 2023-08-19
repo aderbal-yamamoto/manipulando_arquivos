@@ -35,36 +35,40 @@ if(isset($_FILES)){
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<title>Inclusão de Alunos</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Cadastro</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-            
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(Página atual)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="form.php">Incluir</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="formArq.php">Anexar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="listarArquivos.php">Listar Arquivos</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+   
+    
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Incluir</a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarNavAltMarkup" style="">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+        
+        <a class="nav-link"  href="formArq.php">Anexar</a>
+        <a class="nav-link " href="listarArquivos.php">Listar Arquivos</a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="card mt-3">
+    <h1 class="text-center ml-2"> Registros </h1>
+</div>   
+    
 	<form class="mt-3" method="post" action="" enctype="multipart/form-data">
 		Nome <input type="text" name="nome" value="<?=$nome?>" autofocus = "autofocus">
 		    <input type="hidden" name="codigo" value="">
